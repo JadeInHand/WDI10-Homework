@@ -1,0 +1,7 @@
+CREATE TABLE oceans (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT,
+	image TEXT,
+	depth FLOAT,
+	area FLOAT 
+);
