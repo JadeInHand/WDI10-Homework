@@ -1,0 +1,17 @@
+<h1><%= @book.title %></h1>
+
+<ul>
+	<p><%= image_tag @book.image %></p>
+	<% if @book.author %>
+	<li>Author: <%= link_to(@book.author.name, @book.author) %></li>
+	<% end %>
+	<li>Date of Publish: <%= @book.date.strftime "%A, %e %B %Y" if @book.date %></li>
+	<li>Genre: <%= @book.genre %></li>
+	<li>Summary: <%= @book.summary %></li>
+
+</ul>
+
+<div class="controls">
+	<%= link_to "Censor Book", edit_book_path %>
+	<%= button_to "Burn Book", @book, :method => 'delete', :data => { :confirm => "Are you sure you want to destroy this artist?" } %>
+</div>

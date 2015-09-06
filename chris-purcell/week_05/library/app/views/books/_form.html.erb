@@ -1,0 +1,25 @@
+<%= form_for @book do |f| %>
+	<p>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	</p>
+	<p>
+	<%= f.label :date %>
+	<%= f.date_field :date, :placeholder => 'YYYY-MM-DD' %>
+	</p>
+	<p>
+	<%= f.label :summary %>
+	<%= f.text_field :summary %>
+	</p>
+	<p>
+	<%= f.label :image %>
+	<%= f.url_field :image %>
+	</p>
+
+	<p>
+		<label> Author </label>
+		<%= f.select :author_id, Author.all.map { |author| [ author.name, author.id ] }, :include_blank => true %>
+	</p>
+
+	<%= f.submit %>
+<% end %>

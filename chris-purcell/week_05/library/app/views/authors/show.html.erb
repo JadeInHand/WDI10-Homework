@@ -1,0 +1,14 @@
+<h1> <%= @author.name %> </h1>
+
+<ul>
+	<%= image_tag @author.image, :class => "thumb" %>
+	<p>Date of Birth: <%= @author.dob.strftime "%A, %e %B %Y" %> </p>
+	<p>Nationality: <%= @author.nationality %></p>
+</ul>
+
+<% @author.books.each do |book| %>
+	<%= link_to(image_tag(book.image, :class => "thumb"), book) %>
+<% end %>
+
+<%= button_to "Kill Author", @author, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+<%= link_to "Smarten up Author", edit_author_path %>

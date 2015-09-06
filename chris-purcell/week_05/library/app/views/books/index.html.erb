@@ -1,0 +1,6 @@
+<h1> ALL BOOKS</h1>
+
+<% @books.each do |book| %>
+	<p> <%= link_to(book.title, book) %> </p>
+	<p> <%= image_tag book.image %> </p>
+<% end %>

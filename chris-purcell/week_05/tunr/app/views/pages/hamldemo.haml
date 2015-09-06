@@ -1,0 +1,14 @@
+%h1 HAML Demo
+
+%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum earum sit est at, id deleniti ipsum totam quam repudiandae iste vitae accusantium neque, consequuntur voluptatem, temporibus amet maxime inventore doloribus!
+
+%div.main
+	%ul
+		%li groucho
+		%li harpo
+		%li chico
+
+%h2= Random.rand(1..300)
+
+- [1, 2, 3].each do |n|
+	%div= n
